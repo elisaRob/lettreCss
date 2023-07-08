@@ -1,0 +1,68 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+    display:flex;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    background-color:#333;
+}
+
+.carte{
+    height:0;
+    width:0;
+    border-top:100px solid #eee;
+    border-left:170px solid #ddd;
+    border-bottom:100px solid #ccc;
+    border-right:170px solid #ccc;
+   
+}
+
+.coeur{
+    width:35px;
+    height:35px;
+    background-color:#ff3838;
+    transform:translate(-50%,-50%) rotate(45deg);
+    position:relative;
+    animation:animationCoeur 2s linear infinite;
+   
+}
+
+.coeur:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:#ff3838;
+    transform:translateY(-50%);
+    border-radius:50%;
+
+}
+
+.coeur:after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    transform:translateX(-50%);
+    background-color: #ff3838;
+    border-radius:50%;
+}
+
+@keyframes animationCoeur{
+    0%{transform:translate(-50%,-50%) rotate(45deg) scale(1);}
+    25%{transform:translate(-50%,-50%) rotate(45deg) scale(1);}
+    30%{transform:translate(-50%,-50%) rotate(45deg) scale(1.4);}
+    50%{transform:translate(-50%,-50%) rotate(45deg) scale(1.2);}
+    70%{transform:translate(-50%,-50%) rotate(45deg) scale(1.4);}
+    100%{transform:translate(-50%,-50%) rotate(45deg) scale(1);}
+}
